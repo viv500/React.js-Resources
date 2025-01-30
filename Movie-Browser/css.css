@@ -28,6 +28,25 @@ display: inline; /* Only takes necessary width, stays in line */
 display: flex; /* Enables Flexbox layout */
 display: grid; /* Enables Grid layout */
 
+/* example: 
+<div class="flex-container">
+  <div class="flex-item">Item 1</div>
+  <div class="flex-item">Item 2</div>
+  <div class="flex-item">Item 3</div>
+</div>
+*/
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  background-color: lightcoral;
+  padding: 10px;
+  margin: 5px;
+}
+
 /* Determines how elements are positioned. */
 position: static; /* Default positioning (normal document flow) */
 position: relative; /* Positioned relative to its normal position */
@@ -60,7 +79,7 @@ font-weight: 700; /* Numeric weight (100-900) */
 /* Defines text alignment. */
 text-align: left; /* Aligns text to the left */
 text-align: center; /* Centers text */
-text-align: justify; /* Stretches text to align both left and right */
+text-align: justify; /* Stretches text to align both left and right .e. adjusts space between words so they both reach the ends */
 
 /* Controls spacing between lines of text. */
 line-height: 1.5; /* 1.5 times the font size */
@@ -102,48 +121,64 @@ justify-content: center; /* Centers children horizontally */
 justify-content: space-between; /* Distributes children with space between */
 align-items: center; /* Centers children vertically */
 
+<div class="flex-container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+
+
+.flex-container {
+  display: flex; /* Enables flexbox for the container */
+  flex-direction: row; /* Arranges children (boxes) in a row */
+  justify-content: space-between; /* Distributes children with space between */
+  align-items: center; /* Centers children vertically */
+  height: 200px; /* Set a height for better visibility */
+  background-color: lightgray; /* Just to see the container */
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  background-color: lightblue;
+  display: flex; /* Enable flexbox for the box */
+  justify-content: center; /* Centers text horizontally inside the box */
+  align-items: center; /* Centers text vertically inside the box */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+
 /* Enables CSS Grid for a container. */
 display: grid;
-grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+grid-template-columns: repeat(3, 1fr); /* Three equal columns. */
 grid-gap: 10px; /* Space between grid items */
 
-/* ==========================
-   Animations & Transitions
-   ========================== */
+<div class="grid-container">
+  <div class="grid-item">Item 1</div>
+  <div class="grid-item">Item 2</div>
+  <div class="grid-item">Item 3</div>
+  <div class="grid-item">Item 4</div>
+  <div class="grid-item">Item 5</div>
+  <div class="grid-item">Item 6</div>
+</div>
 
-/* Creates a smooth transition effect. */
-transition: all 0.3s ease-in-out; /* Applies to all properties over 0.3s */
-
-/* Defines a CSS animation. */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.animation {
-  animation: fadeIn 1s ease-in; /* Applies fadeIn animation over 1 second */
-}
-
-/* ==========================
-   Media Queries
-   ========================== */
-
-/* Adjusts styles for smaller screens (tablets & mobile devices) */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  .container {
-    width: 100%;
-    padding: 10px;
-  }
+.grid-container {
+  display: grid; /* Enables grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns (1fr means one fraction of the available space) */
+  grid-gap: 10px; /* Sets a 10px gap between the grid items */
+  background-color: lightgray; /* Just for visibility */
 }
 
-/* Adjusts styles for very small screens (mobile devices) */
-@media (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-  .container {
-    padding: 5px;
-  }
+.grid-item {
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #aaa; /* For better visual separation */
 }
+
+// You should see a 3-column layout with 6 items in total, arranged into 2 rows (with each row containing 3 items).
