@@ -2,67 +2,76 @@
    Box Model & Layout
    ========================== */
 
-/* Defines the width of an element. Accepts absolute units (px, em, rem) or percentages. */
-width: 100px; /* Fixed width */
+/* Defines the width of an element. Accepts absolute (px, em, rem), relative (%) units, and viewport units (vw). */
+width: 100px; /* Fixed width in pixels */
 width: 50%; /* 50% of the parent element’s width */
+width: 10vw; /* 10% of the viewport width */
 
-/* Defines the height of an element. Works like width. */
-height: 200px;
-height: auto; /* Adjusts based on content */
+/* Defines the height of an element. Similar to width, it supports absolute, relative, and viewport units. */
+height: 200px; /* Fixed height */
+height: auto; /* Automatically adjusts based on content */
+height: 50vh; /* 50% of the viewport height */
 
 /* Adds space inside the element, between the content and the border. */
 padding: 10px; /* Uniform padding on all sides */
 padding: 10px 20px; /* Top & Bottom: 10px, Left & Right: 20px */
+padding: 5px 10px 15px 20px; /* Top: 5px, Right: 10px, Bottom: 15px, Left: 20px */
 
 /* Adds space outside the element, between it and adjacent elements. */
-margin: 15px;
+margin: 15px; /* Uniform margin on all sides */
 margin: auto; /* Centers the element horizontally if width is defined */
+margin: 10px 20px; /* Top & Bottom: 10px, Left & Right: 20px */
 
 /* Defines how an element is displayed in the document flow. */
 display: block; /* Takes full width, starts a new line */
 display: inline; /* Only takes necessary width, stays in line */
 display: flex; /* Enables Flexbox layout */
+display: grid; /* Enables Grid layout */
 
 /* Determines how elements are positioned. */
-position: static; /* Default positioning (normal flow) */
-position: relative; /* Relative to its normal position */
+position: static; /* Default positioning (normal document flow) */
+position: relative; /* Positioned relative to its normal position */
 position: absolute; /* Positioned relative to the nearest positioned (non-static) ancestor */
 position: fixed; /* Stays in the same place even when scrolling */
 position: sticky; /* Sticks at a position when scrolling */
 
-/* Determines whether an element is visible. */
+/* Controls the visibility of an element. */
 visibility: visible; /* Default, element is shown */
-visibility: hidden; /* Element is hidden but still takes up space */
+visibility: hidden; /* Element is hidden but still occupies space */
+display: none; /* Element is completely removed from layout */
 
 /* ==========================
    Typography
    ========================== */
 
 /* Defines the font size. Uses absolute (px) or relative (em, rem, %) units. */
-font-size: 16px; /* Fixed size */
+font-size: 16px; /* Fixed size in pixels */
 font-size: 1.2em; /* Relative to parent’s font size */
+font-size: 120%; /* 120% of the parent element's font size */
 
 /* Sets the font family, prioritizing fonts available on the system. */
-font-family: Arial, sans-serif;
+font-family: Arial, sans-serif; /* Uses Arial, fallback to sans-serif */
 
 /* Defines font weight (thickness). */
-font-weight: normal; /* Default */
-font-weight: bold; /* Bold text */
+font-weight: normal; /* Default weight (400) */
+font-weight: bold; /* Bold text (700) */
 font-weight: 700; /* Numeric weight (100-900) */
 
 /* Defines text alignment. */
 text-align: left; /* Aligns text to the left */
 text-align: center; /* Centers text */
+text-align: justify; /* Stretches text to align both left and right */
 
 /* Controls spacing between lines of text. */
 line-height: 1.5; /* 1.5 times the font size */
 
 /* Controls the spacing between letters. */
-letter-spacing: 2px;
+letter-spacing: 2px; /* Increases spacing between letters */
 
 /* Controls text decoration. */
 text-decoration: none; /* No decoration */
 text-decoration: underline; /* Underlined text */
+text-decoration: line-through; /* Strikethrough text */
 
 /* ==========================
    Backgrounds & Borders
@@ -73,12 +82,14 @@ background-color: #f0f0f0; /* Light gray */
 background-color: rgba(255, 0, 0, 0.5); /* Red with 50% opacity */
 
 /* Sets a background image. */
-background-image: url('image.jpg');
-background-size: cover; /* Covers the entire element */
+background-image: url('image.jpg'); /* Sets an image as background */
+background-size: cover; /* Covers the entire element without stretching */
+background-size: contain; /* Ensures entire image is visible, may leave empty space */
 
 /* Defines the border of an element. */
 border: 2px solid black; /* Thickness, style, color */
-border-radius: 10px; /* Rounded corners */
+border-radius: 10px; /* Rounds corners by 10px */
+border-radius: 50%; /* Makes the element a circle if it's square */
 
 /* ==========================
    Flexbox & Grid
@@ -88,6 +99,7 @@ border-radius: 10px; /* Rounded corners */
 display: flex;
 flex-direction: row; /* Arranges children in a row */
 justify-content: center; /* Centers children horizontally */
+justify-content: space-between; /* Distributes children with space between */
 align-items: center; /* Centers children vertically */
 
 /* Enables CSS Grid for a container. */
@@ -100,7 +112,7 @@ grid-gap: 10px; /* Space between grid items */
    ========================== */
 
 /* Creates a smooth transition effect. */
-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out; /* Applies to all properties over 0.3s */
 
 /* Defines a CSS animation. */
 @keyframes fadeIn {
@@ -108,5 +120,30 @@ transition: all 0.3s ease-in-out;
   to { opacity: 1; }
 }
 .animation {
-  animation: fadeIn 1s ease-in;
+  animation: fadeIn 1s ease-in; /* Applies fadeIn animation over 1 second */
+}
+
+/* ==========================
+   Media Queries
+   ========================== */
+
+/* Adjusts styles for smaller screens (tablets & mobile devices) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Adjusts styles for very small screens (mobile devices) */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 5px;
+  }
 }
