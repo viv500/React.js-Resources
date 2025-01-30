@@ -13,7 +13,7 @@ import { createContext } from 'react';
 // consumers have to import useContext, providers import createContext
 
 // also need to import usercontext in the consumer file from ComponentA
-
+// userContext needs to be defined outside the component and exported
 export const userContext = createContext();
 
 const ComponentA = () => {

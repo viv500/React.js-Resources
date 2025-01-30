@@ -1,0 +1,112 @@
+/* ==========================
+   Box Model & Layout
+   ========================== */
+
+/* Defines the width of an element. Accepts absolute units (px, em, rem) or percentages. */
+width: 100px; /* Fixed width */
+width: 50%; /* 50% of the parent element’s width */
+
+/* Defines the height of an element. Works like width. */
+height: 200px;
+height: auto; /* Adjusts based on content */
+
+/* Adds space inside the element, between the content and the border. */
+padding: 10px; /* Uniform padding on all sides */
+padding: 10px 20px; /* Top & Bottom: 10px, Left & Right: 20px */
+
+/* Adds space outside the element, between it and adjacent elements. */
+margin: 15px;
+margin: auto; /* Centers the element horizontally if width is defined */
+
+/* Defines how an element is displayed in the document flow. */
+display: block; /* Takes full width, starts a new line */
+display: inline; /* Only takes necessary width, stays in line */
+display: flex; /* Enables Flexbox layout */
+
+/* Determines how elements are positioned. */
+position: static; /* Default positioning (normal flow) */
+position: relative; /* Relative to its normal position */
+position: absolute; /* Positioned relative to the nearest positioned (non-static) ancestor */
+position: fixed; /* Stays in the same place even when scrolling */
+position: sticky; /* Sticks at a position when scrolling */
+
+/* Determines whether an element is visible. */
+visibility: visible; /* Default, element is shown */
+visibility: hidden; /* Element is hidden but still takes up space */
+
+/* ==========================
+   Typography
+   ========================== */
+
+/* Defines the font size. Uses absolute (px) or relative (em, rem, %) units. */
+font-size: 16px; /* Fixed size */
+font-size: 1.2em; /* Relative to parent’s font size */
+
+/* Sets the font family, prioritizing fonts available on the system. */
+font-family: Arial, sans-serif;
+
+/* Defines font weight (thickness). */
+font-weight: normal; /* Default */
+font-weight: bold; /* Bold text */
+font-weight: 700; /* Numeric weight (100-900) */
+
+/* Defines text alignment. */
+text-align: left; /* Aligns text to the left */
+text-align: center; /* Centers text */
+
+/* Controls spacing between lines of text. */
+line-height: 1.5; /* 1.5 times the font size */
+
+/* Controls the spacing between letters. */
+letter-spacing: 2px;
+
+/* Controls text decoration. */
+text-decoration: none; /* No decoration */
+text-decoration: underline; /* Underlined text */
+
+/* ==========================
+   Backgrounds & Borders
+   ========================== */
+
+/* Sets background color. Accepts named colors, hex, rgb, or hsl values. */
+background-color: #f0f0f0; /* Light gray */
+background-color: rgba(255, 0, 0, 0.5); /* Red with 50% opacity */
+
+/* Sets a background image. */
+background-image: url('image.jpg');
+background-size: cover; /* Covers the entire element */
+
+/* Defines the border of an element. */
+border: 2px solid black; /* Thickness, style, color */
+border-radius: 10px; /* Rounded corners */
+
+/* ==========================
+   Flexbox & Grid
+   ========================== */
+
+/* Enables flexbox for a container. */
+display: flex;
+flex-direction: row; /* Arranges children in a row */
+justify-content: center; /* Centers children horizontally */
+align-items: center; /* Centers children vertically */
+
+/* Enables CSS Grid for a container. */
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+grid-gap: 10px; /* Space between grid items */
+
+/* ==========================
+   Animations & Transitions
+   ========================== */
+
+/* Creates a smooth transition effect. */
+transition: all 0.3s ease-in-out;
+
+/* Defines a CSS animation. */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animation {
+  animation: fadeIn 1s ease-in;
+}

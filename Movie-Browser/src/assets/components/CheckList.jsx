@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
 
+/* The key prop in React helps React identify which items in a list have changed, been added, or been removed, improving performance when re-rendering.
+
+Here’s why it's important:
+
+1. Efficient Updates
+Without key, React would have to re-render all the list items on each update, even if only one item changes.
+With key, React can efficiently update only the changed item, improving performance. It uses the key to track each element's position and identity.
+*/
+
 const CheckList = () => {
     const [items, setItems] = useState([]);
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import WeatherFetching from './assets/components/weatherFetching'
-import ComponentA from './assets/components/contextComponents/ComponentA.jsx'
 
 const App = () => {
   return (
