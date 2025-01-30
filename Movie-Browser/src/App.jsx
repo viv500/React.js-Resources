@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherFetching from './assets/components/weatherFetching'
+import ComponentA from './assets/components/contextComponents/ComponentA.jsx'
 
 const App = () => {
   return (
@@ -8,12 +9,11 @@ const App = () => {
     <div className="wrapper">
       <header>
         <h1>
+          
         {/* CSS Trick to get a gradient by using a liner background from and to 
             We used span on it purely to apply the styling
             div wouldve taken it to the next line*/}
           Find <span className="text-gradient"> movies </span> you'll enjoy without the Hastle
-
-        <WeatherFetching></WeatherFetching>
       
       </h1>
       </header>
